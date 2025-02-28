@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+author: "Anoosha Imran"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## 
+
+Link to Assignment: <https://public.tableau.com/views/assignment4_AnooshaImran/Dashboard_Assignment4>
+
+# Plot 1: Trend of Biblical Names Across the Century:
+
+The idea behind the graph was to see whether there has been increase or decrease in biblical names in the last 10 years but the surge observed made me think of whether national or international crisis have any sort of impact on this. The graph now displays the trend of biblical names across the century. The two main events I want to see was if there was an impact during the two major world wars, the Cold War and Vietnam War. There seems to be increase in the frequency in the name during all of these events. Interestingly, there is a visible decrease after the Cold War in the trend of biblical names. The colors are set by density so the higher the count of names the darker the bar appears. One important limitation is that the data does not adjust for the increase in population across the years. In order to achieve that, I filtered out the biblical names from the entire list of names. The formula I used for this is provided at the end of the narrative. While I’m sure there may an easier way to filter it, I could not find a function for it.
+
+# Plot 2: Most Common Biblical Names in the past 100 years:
+
+The visualization here is primarily to support the Biblical Names across the century. The idea here is to display the actual names that have been used most commonly. The reasoning behind this is that in reality, there are approximately 80 biblical names. This visualizing attempts to display which ones have been more common during the past century or during the time displayed in the graph above. The names are also filtered by color where purple shows us the names for Males and green for Females. We also see that it is more common for males to be named biblical names as xompaed to females. While it is true that there are generally more male names than female ones in the Bible but it is nonetheless an interesting observation.
+
+# Plot 3: Most Popular Names in the Past 5 Years:
+
+The first visualization displays the most popular names in the past 5 years. It is meant to be a simple graph that shows us what names have been used more frequently across the country. The y-axis does not list the count of the time the name has been given. Instead, it ranks the most popular names from 1 to 10 with 1 being the most popular name and 10 being the least. The years are divided by color and the legend shows the years associated with the colors in the graph.
+
+# Code:
+
+Biblical Names
+
+Role: Discrete Dimension Type: Calculated Field Contains NULL: No Locale: Sort flags: Case-sensitive Column width: 12 Status: Valid
+
+Formula
+
+IF [Names] IN ( /\* Old Testament */ "Adam", "Eve", "Cain", "Abel", "Seth", "Noah", "Abraham", "Sarah", "Isaac", "Rebekah", "Jacob", "Rachel", "Leah", "Joseph", "Benjamin", "Moses", "Aaron", "Miriam", "Joshua", "Caleb", "Samuel", "David", "Solomon", "Elijah", "Elisha", "Isaiah", "Jeremiah", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi", "Job", /* New Testament \*/ "Mary", "Jesus", "John", "Peter", "Andrew", "James", "Philip", "Bartholomew", "Thomas", "Matthew", "Simon", "Judas", "Matthias", "Paul", "Barnabas", "Stephen", "Timothy", "Titus", "Luke", "Mark", "Martha", "Elizabeth", "Salome", "Anna","Michael", "Ethan","Gabriel","Nathan","Jonathan","Hannah","Chloe","Jason","Jose","Zachary","Levi"\
+) THEN "Biblical" ELSE "Non-Biblical" END
+
+Domain (2 members)
+
+Biblical Non-Biblical
